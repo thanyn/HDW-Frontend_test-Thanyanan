@@ -1,10 +1,12 @@
 # HDW-Frontend_test-Thanyanan
+
 BackEnd Run :
 
-mvnw spring-boot:run
-FrontEnd Run :
+    mvnw spring-boot:run
+    
+ FrontEnd Run :
 
-npm install
+    npm install
 
-ng serve
+    ng serve
 Link : http://localhost:4200/home
