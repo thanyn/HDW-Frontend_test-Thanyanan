@@ -1,0 +1,46 @@
+<body >
+    <mat-toolbar class="main-navigation-bar">
+        <mat-toolbar-row style="background-color: #3f3430">
+          <div [routerLink]="['/home']">
+            <img src="../../assets/img/logo.png" style="padding-left:2vh;" width="100" height="30" >
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+  <br>
+
+  <div>
+    <h1 class="textHead" >{{products.productName}}</h1>
+
+  </div>
+
+  <div style="width: 76%; text-align: right">
+    
+  </div>
+
+  <mat-card style="background-color: rgb(248, 232, 250); ">
+    <p style="font-size: 20px; color: rgb(31, 156, 83); text-align: right">{{products.typeSell}}</p>
+    <mat-grid-list cols="2" rowHeight="80px">
+      <mat-grid-tile>
+        <p class="text" style="font-size: 18px; text-align: center">ราคา</p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <p>{{products.productCost}} Bath</p>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="80px">
+      <mat-grid-tile>
+        <p style="font-size: 18px; text-align: center">รายละเอียด</p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <p>{{products.productDescription}}</p>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+  <br>
+  <div align="center">
+    <button mat-stroked-button (click)="home()">Back</button>
+  </div>
+  <br>
+</body>

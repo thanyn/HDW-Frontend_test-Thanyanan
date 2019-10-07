@@ -1,0 +1,96 @@
+<link href="https://fonts.googleapis.com/css?family=Mitr|Prompt&display=swap" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Mitr|Prompt&display=swap');
+</style>
+
+<body>
+    <mat-toolbar class="main-navigation-bar">
+        <mat-toolbar-row style="background-color: #3f3430">
+          <div [routerLink]="['/home']">
+            <img src="../../assets/img/logo.png" style="padding-left:2vh;" width="100" height="30" >
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+  
+
+  <div>
+    <h1 style="font-size: 56px; text-align: center; color: #000000; text-shadow: rgb(255, 255, 255);">
+        <i class="material-icons" style="font-size: 43px">
+            edit</i> PRODUCT</h1>
+  </div>
+
+  <mat-card >
+
+    <br>
+    <mat-grid-list cols="2" rowHeight="65px">
+      <mat-grid-tile>
+        <p style="font-size: 18px; text-align: center">รหัสสินค้า</p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" style="width: 75%;">
+          <input matInput [(ngModel)]="product.productCode" placeholder="What's product code? (AB1234)">
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="65px">
+      <mat-grid-tile>
+        <p style="font-size: 18px; text-align: center">ชื่อสินค้า</p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field style="width: 75%">
+          <input matInput [(ngModel)]="product.productName" placeholder="What's product name?">
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="65px">
+      <mat-grid-tile>
+        <p style="font-size: 18px; text-align: center">ราคาสินค้า (Bath)</p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field style="width: 75%">
+          <input matInput type="number" [(ngModel)]="product.productCost" placeholder="How much is the product?">
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="80px">
+      <mat-grid-tile>
+        <p style="font-size: 18px; text-align: center">สถานะสินค้า</p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field style="width: 75%">
+          <input matInput [(ngModel)]="product.typeSell" placeholder="Status (Best Seller or  ' ' ) ">
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="80px">
+      <mat-grid-tile>
+        <p style="font-size: 18px; text-align: center">รายละเอียด</p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field style="width: 75%; ">
+          <textarea matInput [(ngModel)]="product.productDescription" placeholder="Product Description"></textarea>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+    <br>
+<button mat-button style="width: 100%; background-color: rgb(126, 202, 145)" (click)="saveAndUpdate()">
+  <i class="material-icons">save</i><b> SAVE & UPDATE</b></button>
+  </mat-card>
+
+  <br> 
+  
+  <div align="center">
+    <button mat-button style=" background-color: rgb(189, 121, 121);" (click)="goProduct()">Back</button>
+    
+  </div>
+  <br>
+
+
+  
+</body>

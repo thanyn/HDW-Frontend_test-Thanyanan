@@ -1,0 +1,64 @@
+<body>
+  <mat-toolbar class="main-navigation-bar">
+    <mat-toolbar-row style="background-color: #3f3430">
+      <div [routerLink]="['/home']">
+        <img src="../../assets/img/logo.png" style="padding-left:2vh;" width="100" height="30">
+      </div>
+    </mat-toolbar-row>
+
+
+  </mat-toolbar>
+
+
+  <div>
+    <h1 style="font-size: 56px; text-align: center; color: #000000; text-shadow: rgb(255, 255, 255);">
+      <i class="material-icons" style="font-size: 42px">
+        view_list</i> LIST PRODUCT</h1>
+  </div>
+
+
+  <div class="form-group" style="margin-left: 24%">
+    <input matInput type="text" class="form-control" placeholder="Search by Product Name" [(ngModel)]="searchTerm" />
+  </div>
+  <br>
+  <div>
+    <mat-card style="background-color: bisque">
+
+      <table class="table table-striped">
+        <thead>
+     
+          <th>Product Code</th>
+          <th>Product Name</th>
+          <th>Operations </th>
+        </thead>
+        <br>
+        <tbody>
+          <tr *ngFor="let product of products | productFilter:searchTerm">
+            
+            <td>{{product.productCode}}</td>
+            <td>{{product.productName}}</td>
+
+            <td>
+              <button mat-button style="background-color: rgb(226, 202, 96)" (click)="view(product)">
+                <i class="material-icons">pageview</i> View</button>&nbsp;
+              <button mat-button style="background-color: rgb(189, 86, 86)" (click)="deleteProduct(product)">
+                <i class="material-icons">delete</i> Delete</button>&nbsp;
+              <button mat-button style="background-color: rgb(145, 104, 199)" (click)="updateProduct(product)"><i
+                  class="material-icons">edit</i> Edit</button>&nbsp;
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </mat-card>
+  </div>
+
+  <br>
+  <div align="center">
+    <button mat-button style="background-color: rgb(98, 177, 115)" (click)="newProduct()">
+      <i class="material-icons">add_shopping_cart</i> New Product</button>
+  </div>
+
+
+  <br>
+</body>
